@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/transact.css" />
+  </head>
+  <body>
+    <div class="transact-container">
+      <div class="transact-heading">User Profile</div>
+      <div class="user-info">
+        <div class="user-item user-item-1">First Name - <%=fName %></div>
+        <div class="user-item user-item-2">Last Name - <%=lName %></div>
+        <div class="user-item user-item-1">Email - <%=email %></div>
+        <div class="user-item user-item-2">Gender - <%=gender %></div>
+        <div class="user-item user-item-1">Age - <%=age %></div>
+        <div class="user-item user-item-2">Balance - <%=balance %></div>
+      </div>
+      <div class="transfer-container">
+        <form class="transfer-form" action="/transaction" method="post">
+          <div class="user">
+            <label for="users">Select an Account Holder </label>
+            <select id="users" name="user">
+              <% usersList.forEach(user => { %>
+
+              <option name="user-name" value="<%= user.firstName %>">
+                <%=user.firstName %>, Balance: <%=user.balance %>
+              </option>
+              <%})%>
+            </select>
+          </div>
+          <div class="amount">
+            <label for="amount">Enter Transfer Amount</label>
+            <input type="text" id="amount" name="amount" required />
+            <input type="hidden" name="transferrer" value="<%= curUserId %>" />
+          </div>
+          <button type="submit">Transfer Money!!</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

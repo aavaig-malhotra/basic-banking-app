@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+:root {
+  --color-pink: #ff2e63;
+  --color-black: rgb(37, 42, 52);
+  --color-blue: #08d9d6;
+  --color-white: #eaeaea;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--color-white);
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.header {
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-black);
+}
+
+.header-logo img {
+  width: 10rem;
+}
+
+.header .navbar {
+  flex: 0.7;
+  display: flex;
+  margin-left: 4rem;
+}
+
+.nav-item {
+  margin-right: 3rem;
+  position: relative;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-pink);
+  transform: scaleX(0);
+  transition: all 0.25s;
+}
+
+.nav-item:hover::before {
+  transform: scaleX(1);
+}
+
+.nav-item a,
+.nav-item a:active,
+.nav-item a:visited {
+  font-size: 2.4rem;
+  text-decoration: none;
+  color: var(--color-pink);
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.main {
+  height: calc(100vh - 77.76px);
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.main-content {
+  height: 80%;
+  width: 80%;
+  display: flex;
+}
+
+.main-content-left,
+.main-content-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-content-left .content-heading h1 {
+  font-size: 5rem;
+  color: var(--color-pink);
+  letter-spacing: 8px;
+}
+
+.main-content-left .content-tagline h4 {
+  font-size: 3rem;
+  color: var(--color-black);
+  margin-bottom: 4rem;
+}
+
+.transaction-button form button {
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  background-color: var(--color-black);
+  color: var(--color-pink);
+  letter-spacing: 1.4px;
+  word-spacing: 3px;
+  transition: all 0.25s;
+}
+
+.transaction-button form button:hover {
+  transform: translateY(-5px);
+}
+
+.transaction-button form button:active {
+  transform: translateY(-2px);
+}
+
+.main-content-right img {
+  width: 100%;
+}
+
+.heading-container {
+  padding: 1.5rem 0;
+  display: grid;
+  place-items: center;
+  margin-bottom: 3rem;
+}
+
+.heading-container h1 {
+  padding: 0.5rem 2.5rem;
+  font-size: 4rem;
+  background-color: var(--color-black);
+  color: var(--color-pink);
+  word-spacing: 5px;
+  letter-spacing: 1.8px;
+  border-radius: 3px;
+  box-shadow: 0 5px 12px 3px rgba(37, 42, 52, 0.25);
+}
+
+.transaction-content-container {
+  padding: 1rem 2rem;
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+}
+
+.transaction-content,
+.history-content {
+  width: 80%;
+  padding: 1rem 2rem;
+  overflow-y: auto;
+}
+
+.transaction-item,
+.history-item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 3px 8px 3px rgba(37, 42, 52, 0.2);
+  border-radius: 3px;
+  transform: scale(1);
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+.transaction-item:hover,
+.history-item:hover {
+  transform: scale(1.02);
+}
+
+.transaction-item .left-border {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2rem;
+  background-color: var(--color-blue);
+  display: inline-block;
+}
+
+.transaction-item .content,
+.history-item .content {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0;
+}
+
+.transaction-item .content .number {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.transaction-item .content .name,
+.transaction-item .content .email,
+.history-item .content .name,
+.history-item .content .email {
+  font-size: 2rem;
+  flex: 0.42;
+}
+
+.transaction-item .content .name {
+}
+
+.transaction-item .content .email {
+}
+
+.transaction-item .content form {
+  flex: 0.16;
+}
+
+.transaction-item .content form button {
+  padding: 0.8rem 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  width: 100%;
+  border: 1px solid var(--color-black);
+  border-radius: 3px;
+  outline: none;
+  background-color: var(--color-white);
+  color: var(--color-pink);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.transaction-item .content button:hover {
+  border: 1px solid var(--color-pink);
+  outline: none;
+  background-color: var(--color-pink);
+  color: var(--color-black);
+}
+
+.history-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.history-item .content .amount {
+  flex: 0.16;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.history-content-container {
+  padding: 1rem 2rem;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.history-content-container .item-heading {
+  display: flex;
+  width: 73%;
+  padding: 0.5rem 2rem;
+}
+
+.item-heading .transferrer,
+.item-heading .receiver {
+  flex: 0.4;
+  padding: 0 1rem;
+  font-size: 2rem;
+  border-bottom: 2px solid var(--color-pink);
+  font-weight: 700;
+}
+
+.item-heading .Amount {
+  text-align: center;
+  flex: 0.2;
+  font-weight: 700;
+  font-size: 2rem;
+  border-bottom: 2px solid var(--color-pink);
+}

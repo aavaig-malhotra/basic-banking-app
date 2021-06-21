@@ -1,0 +1,25 @@
+<%- include('header') -%>
+
+<div class="heading-container">
+  <h1>User List</h1>
+</div>
+<div class="transaction-content-container">
+  <div class="transaction-content">
+    <% userList.forEach(user => { %>
+    <div class="transaction-item">
+      <div class="content">
+        <h3 class="number"><%= user._id %>.</h3>
+        <h3 class="name"><%= user.firstName %> <%= user.lastName %></h3>
+        <h3 class="email">Balance - <%= user.balance %></h3>
+        <form action="/transact" method="POST">
+          <button type="submit" name="id" value="<%= user._id %>">
+            Transact
+          </button>
+        </form>
+      </div>
+    </div>
+    <%})%>
+  </div>
+</div>
+
+<%- include('footer') -%>

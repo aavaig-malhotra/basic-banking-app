@@ -1,0 +1,25 @@
+<%- include('header') -%>
+
+<div class="heading-container">
+  <h1 class="heading">History</h1>
+</div>
+<div class="history-content-container">
+  <div class="item-heading">
+    <div class="transferrer">Transferrer</div>
+    <div class="receiver">Receiver</div>
+    <div class="Amount">Amount(in Rs.)</div>
+  </div>
+  <div class="history-content">
+    <% list.forEach(item => { %>
+    <div class="history-item">
+      <div class="content">
+        <div class="name"><%=item.tFName%> <%=item.tLName%></div>
+        <div class="email"><%=item.rFName%> <%=item.rLName%></div>
+        <div class="amount"><%=item.Amount %></div>
+      </div>
+    </div>
+    <%}) %>
+  </div>
+</div>
+
+<%- include('footer') -%>

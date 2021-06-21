@@ -1,0 +1,24 @@
+<%- include('header') -%>
+
+<main class="main">
+  <div class="main-content">
+    <div class="main-content-left">
+      <div class="content-heading">
+        <h1>MoniGo</h1>
+      </div>
+      <div class="content-tagline">
+        <h4>Transact money on the Go</h4>
+      </div>
+      <div class="transaction-button">
+        <form action="/transaction" method="GET">
+          <button type="submit">See Transaction &#8594;</button>
+        </form>
+      </div>
+    </div>
+    <div class="main-content-right">
+      <img src="/images/money-transfer.png" />
+    </div>
+  </div>
+</main>
+
+<%- include('footer') -%>

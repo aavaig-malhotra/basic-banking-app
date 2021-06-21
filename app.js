@@ -10,9 +10,12 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-mongoose.connect('mongodb://localhost:27017/bankingAppDB', {
-  useNewUrlParser: true,
-});
+mongoose.connect(
+  'mongodb+srv://admin-aavaig:test123@cluster0.vkj51.mongodb.net/bankingAppDB',
+  {
+    useNewUrlParser: true,
+  }
+);
 
 const balanceSchema = {
   balance: Number,
